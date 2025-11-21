@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ツールページ</title>
+    <script src="/js/tailwindcss.js"></script>
+    <link rel="stylesheet" href="/css/page.css">
+</head>
+<body class="bg-gray-100 dark:bg-gray-900 text-gray-900 dark:text-white">
+
+    <button class="back-button fixed top-5 left-5 z-50 bg-blue-500 hover:bg-blue-600 text-white font-semibold py-2 px-4 rounded-lg shadow-lg transform transition-all duration-300 ease-in-out flex items-center space-x-2" onclick="window.location.href='/'">
+        <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7"></path>
+        </svg>
+        <span>戻る</span>
+    </button>
+
+    <div class="section bg-white dark:bg-gray-800 text-center py-20">
+        <h1 class="text-4xl font-semibold mb-6">🧸ツール🧸</h1>
+      
+        <div class="mt-6">
+          <input type="text" id="search" placeholder="ツールを検索..." class="w-full max-w-md p-2 border rounded-lg shadow-md focus:outline-none focus:ring-2 focus:ring-blue-500 text-black">
+        </div>
+
+        <div id="tool-list" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6 mt-10 px-4 max-w-screen-xl mx-auto">
+            <div class="tool bg-gray-200 dark:bg-gray-700 p-6 rounded-lg shadow-lg max-w-sm w-full">
+                <h3 class="tool-title text-xl font-semibold">📱Android</h3>
+                <p class="tool-description text-gray-600 dark:text-gray-400 text-sm mt-2">くっそラグい仮想スマホで遊べます。</p>
+                <a href="/tools/tool/android" class="text-blue-500 mt-2 inline-block">ツールを使用</a>
+            </div>
+            <div class="tool bg-gray-200 dark:bg-gray-700 p-6 rounded-lg shadow-lg max-w-sm w-full">
+                <h3 class="tool-title text-xl font-semibold">小さい画面に埋め込む</h3>
+                <p class="tool-description text-gray-600 dark:text-gray-400 text-sm mt-2">iPad用で、他者からの視認性を悪くします。</p>
+                <a href="/tools/tool/umekomi" class="text-blue-500 mt-2 inline-block">ツールを使用</a>
+            </div>
+            <div class="tool bg-gray-200 dark:bg-gray-700 p-6 rounded-lg shadow-lg max-w-sm w-full">
+                <h3 class="tool-title text-xl font-semibold">invAPIチェッカー</h3>
+                <p class="tool-description text-gray-600 dark:text-gray-400 text-sm mt-2">入力されたinvidiousのURLを動くものと動かないものに分けられます。</p>
+                <a href="/tools/tool/inv" class="text-blue-500 mt-2 inline-block">ツールを使用</a>
+            </div>
+            <div class="tool bg-gray-200 dark:bg-gray-700 p-6 rounded-lg shadow-lg max-w-sm w-full">
+                <h3 class="tool-title text-xl font-semibold">htmlを取得</h3>
+                <p class="tool-description text-gray-600 dark:text-gray-400 text-sm mt-2">ウェブサイトのhtmlを取得して表示できます。</p>
+                <a href="/tools/tool/htmlget" class="text-blue-500 mt-2 inline-block">ツールを使用</a>
+            </div>
+            <div class="tool bg-gray-200 dark:bg-gray-700 p-6 rounded-lg shadow-lg max-w-sm w-full">
+                <h3 class="tool-title text-xl font-semibold">htmlproxy</h3>
+                <p class="tool-description text-gray-600 dark:text-gray-400 text-sm mt-2">htmlを取得する簡単なProxy。</p>
+                <a href="/tools/tool/get" class="text-blue-500 mt-2 inline-block">ツールを使用</a>
+            </div>
+        </div>
+    </div>
+
+    <footer class="bg-gray-800 dark:bg-gray-900 text-center py-6">
+        <p class="text-white">(・∀・)</p>
+    </footer>
+
+    <script>
+        const searchInput = document.getElementById('search');
+        const toolList = document.getElementById('tool-list');
+        const tools = document.querySelectorAll('.tool');
+
+        searchInput.addEventListener('input', function() {
+            const searchText = searchInput.value.toLowerCase();
+
+            tools.forEach(tool => {
+                const title = tool.querySelector('.tool-title').textContent.toLowerCase();
+                const description = tool.querySelector('.tool-description').textContent.toLowerCase();
+                if (title.includes(searchText) || description.includes(searchText)) {
+                    tool.style.display = '';
+                } else {
+                    tool.style.display = 'none';
+                }
+            });
+        });
+    </script>
+
+</body>
+</html>

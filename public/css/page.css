@@ -1,0 +1,47 @@
+body, html {
+    max-width: 100%;
+    overflow-wrap: break-word;
+    word-wrap: break-word;
+    overflow-x: auto;
+    white-space: normal;
+    word-break: break-all;
+}
+.back-button {
+   transition: transform 0.3s ease-in-out;
+}
+.back-button:hover {
+   transform: scale(1.1);
+}
+.link-button {
+   transition: transform 0.3s ease-in-out;
+}
+.link-button:hover {
+   transform: scale(1.1);
+}
+.result-item {
+  transition: transform 0.2s;
+}
+.result-item:hover {
+  transform: scale(1.03);
+}
+.hidden {
+    display: none;
+}
+.description a {
+    color: #4a77a8;
+    text-decoration: none;
+}
+.thumbnail {
+  position: relative;
+  display: inline-block;
+}
+.video-duration {
+  position: absolute;
+  bottom: 8px;
+  right: 8px;
+  background-color: rgba(0, 0, 0, 0.7);
+  color: white;
+  padding: 2px 4px;
+  border-radius: 2px;
+  font-size: 12px;
+}

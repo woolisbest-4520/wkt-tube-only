@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>home</title>
+    <script src="/js/tailwindcss.js"></script>
+    <link rel="stylesheet" href="/css/page.css">
+    <style>
+        .hero-section {
+            background-image: url('https://cdn.glitch.global/21c63086-ffc1-4d28-8e9a-e2c12f51b431/IMG_2880.jpeg');
+            background-position: center;
+            background-size: cover;
+            height: 60vh;
+            transition: opacity 0.3s ease-in-out;
+        }
+        .fade-out-on-scroll {
+            position: relative;
+            z-index: 10;
+        }
+        .fade-out-on-scroll.scrolled {
+            opacity: 0;
+        }
+        .header-text {
+            text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.5);
+        }
+        .section {
+            padding: 40px 20px;
+        }
+    </style>
+</head>
+<body class="bg-gray-100 dark:bg-gray-900 text-gray-900 dark:text-white">
+    <div class="hero-section fade-out-on-scroll" id="heroSection">
+        <div class="flex flex-col items-center justify-center h-full bg-black bg-opacity-50">
+            <h1 class="text-5xl font-bold text-white header-text">🧸Rewrite</h1>
+            <p class="text-lg text-white mt-2">学習サイトらしい</p>
+        </div>
+    </div>
+  
+    <div class="section bg-white dark:bg-gray-800 text-center">
+        <h2 class="text-4xl font-semibold mb-4">📝 お知らせ</h2>
+        <div class="space-y-4">
+            <div class="bg-gray-200 dark:bg-gray-700 p-6 rounded-lg shadow-lg">
+                <h3 class="text-xl font-semibold">作ってみたよ|•ω•)</h3>
+                <p class="text-gray-600 dark:text-gray-400 text-sm mt-2">なんか、色々と書いていけたらいいね(？)。</p>
+                <a href="#" class="text-blue-500 mt-2 inline-block">詳細</a>
+                <p class="absolute right-7 text-gray-500 dark:text-gray-300 text-xs">投稿日時: 2025年3月2日</p>
+            </div>
+        </div>
+    </div>
+
+    <div class="section px-6 py-10">
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mt-6">
+            <div class="bg-white dark:bg-gray-800 p-6 rounded-xl shadow-md text-center">
+                <h2 class="text-xl font-semibold">🧰 ツール</h2>
+                <p class="text-gray-500 dark:text-gray-400 text-sm mt-1">色々とカスみたいなツールがあります</p>
+                <a href="/tools" class="link-button mt-3 inline-block bg-blue-500 text-white py-2 px-4 rounded">開く</a>
+            </div>
+
+            <div class="bg-white dark:bg-gray-800 p-6 rounded-xl shadow-md text-center">
+                <h2 class="text-xl font-semibold">📚 ブログ</h2>
+                <p class="text-gray-500 dark:text-gray-400 text-sm mt-1">技術的な何か。見た人が興味を持てるといいね</p>
+                <a href="/blog" class="link-button mt-3 inline-block bg-blue-500 text-white py-2 px-4 rounded">開く</a>
+            </div>
+
+            <div class="bg-white dark:bg-gray-800 p-6 rounded-xl shadow-md text-center">
+                <h2 class="text-xl font-semibold">🎥 わかめtube</h2>
+                <p class="text-gray-500 dark:text-gray-400 text-sm mt-1">春雨おいしい😋</p>
+                <a href="/wkt" class="link-button mt-3 inline-block bg-blue-500 text-white py-2 px-4 rounded">開く</a>
+            </div>
+        </div>
+    </div>
+  
+    <div class="section bg-white dark:bg-gray-800 text-center">
+        <h2 class="text-4xl font-semibold mb-4">いろんなリンク</h2>
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+            <div class="bg-gray-200 dark:bg-gray-700 p-6 rounded-lg shadow-lg">
+                <h3 class="text-xl font-semibold">GitHub</h3>
+                <p class="text-gray-600 dark:text-gray-400 text-sm mt-2">わかめtubeとか。作ったのを複製用においてたり。</p>
+                <a href="https://github.com/sadaramagura/watawata" class="text-blue-500 mt-2 inline-block" target="_blank">フォローしようね</a>
+            </div>
+        </div>
+    </div>
+  
+    <footer class="bg-gray-800 dark:bg-gray-900 text-center py-6">
+        <p class="text-white">(・∀・) | <a href="mailto:23h11008@example.com" class="text-blue-400">お問い合わせ</a></p>
+    </footer>
+    <script>
+        const heroSection = document.getElementById('heroSection');
+        window.addEventListener('scroll', () => {
+            const scrollPosition = window.scrollY;
+            if (scrollPosition > 150) {
+                heroSection.classList.add('scrolled');
+            } else {
+                heroSection.classList.remove('scrolled');
+            }
+        });
+    </script>
+</body>
+</html>

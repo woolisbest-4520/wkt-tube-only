@@ -1,0 +1,33 @@
+{
+  "name": "wakametube",
+  "version": "1.0.8",
+  "main": "server.js",
+  "license": "CC-BY-4.0",
+  "dependencies": {
+    "express": "^4.21.2",
+    "compression": "^1.8.0",
+    "ejs": "^3.1.10",
+    "axios": "^1.8.1",
+    "ytsr": "latest",
+    "ytpl": "latest",
+    "cookie-parser": "^1.4.7",
+    "soundcloud-downloader": "^1.0.0",
+    "youtubei.js": "latest",
+    "undici": "latest",
+    "miniget": "^4.2.3",
+    "cors": "^2.8.5"
+  },
+  "description": "wakame",
+  "engines": {
+    "node": "20.x"
+  },
+  "author": "wakame02",
+  "bugs": {
+    "email": "23h11008@gmail.com"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "start": "node server.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  }
+}
